@@ -144,10 +144,10 @@ def train_10times():
             print('Data2 Training size and testing size are:', TrainPatch2.shape, 'and', TestPatch2.shape)
             tic1 = time.time()
             pred_y, val_acc = train_network(train_loader, TestPatch1, TestPatch2, TestLabel,
-                                            LR=args.learning_rate,
-                                            EPOCH=args.epoches, l1=band1, l2=band2,
-                                            Classes=args.num_classes, num_train=num_train_1[k], order=number,
-                                            patch_size=args.patch_size, num_unlabeled=args.num_unlabeled, theta=args.theta)
+                                    LR=args.learning_rate,
+                                    EPOCH=args.epoches, l1=band1, l2=band2,
+                                    Classes=args.num_class, num_train=num_train_1[k], order=number,
+                                    patch_size=args.patch_size, num_labelled=args.num_labelled, factor_lambda=args.factor_lambda)
             pred_y.type(torch.FloatTensor)
             TestLabel.type(torch.FloatTensor)
             print("***********************Train and test result record***************************")
