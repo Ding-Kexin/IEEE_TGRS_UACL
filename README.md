@@ -1,6 +1,6 @@
 # UACL
 The repository contains the implementations for "**Uncertainty-aware Contrastive Learning for Semi-supervised Classification of Hyperspectral and LiDAR Data**".
-![GLT-Net](https://github.com/Ding-Kexin/UACL/blob/main/UACL.jpg)
+![UACL](https://github.com/Ding-Kexin/UACL/blob/main/UACL_framework.jpg)
 ****
 # Datasets
 - [Houston](https://hyperspectral.ee.uh.edu/?page_id=459)
