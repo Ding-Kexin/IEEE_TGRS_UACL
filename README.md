@@ -1,5 +1,5 @@
 # UACL
-The repository contains the implementations for "**Uncertainty-aware Contrastive Learning for Semi-supervised Classification of Hyperspectral and LiDAR Data**".
+The repository contains the implementations for "**Uncertainty-aware Contrastive Learning for Semi-supervised Classification of Multimodal Remote Sensing Images**".
 ![UACL](https://github.com/Ding-Kexin/UACL/blob/main/UACL_framework.jpg)
 ****
 # Datasets
@@ -10,7 +10,7 @@ The repository contains the implementations for "**Uncertainty-aware Contrastive
 ****
 # Train UACL
 ``` 
-python demo.py
+python Model/demo.py
 ``` 
 ****
 # Results
