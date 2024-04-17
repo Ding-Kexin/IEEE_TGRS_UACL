@@ -19,7 +19,7 @@ python demo.py
 | Houston  | 95.37 | 95.99 | 95.00 |
 | Trento  | 99.11 | 98.10 | 98.81 |
 | MUUFL  | 88.29 | 89.11 | 84.78 |
-| Augsburg  | 88.50 | 73.85 | 83.76 |
+| Augsburg  | 89.19 | 74.30 | 84.80 |
 ****
 # Citation
 If you find this paper useful, please cite:
