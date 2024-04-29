@@ -335,19 +335,43 @@ def train_network(train_loader, TestPatch1, TestPatch2, TestLabel, LR, EPOCH, l1
                       '| test accuracy: %.6f' % accuracy)
                 val_acc.append(accuracy.data.cpu().numpy())
                 # Save the parameters in network
-                if accuracy > BestAcc:
-                    torch.save(cnn.state_dict(),
-                               './log/Muufl_UACL_baseline_pretrain_%d_%d.pkl' % (
-                               num_train, order))
-                    BestAcc = accuracy
-                    best_y = pred_y
-
+                torch.save(cnn.state_dict(), './log/UACL_baseline_pretrain_%d_%d.pkl' % ( num_train, order))
                 cnn.train()  # Open Batch Normalization and Dropout
+    cnn.load_state_dict(torch.load(
+        './log/UACL_baseline_pretrain_%d_%d.pkl' % (
+            num_train, order)))
+    cnn.eval()
+
+    pred_y = np.empty((len(TestLabel)), dtype='float32')
+    number = len(TestLabel) // 100
+    for i in range(number):
+        temp1_1 = TestPatch1[i * 100:(i + 1) * 100, :, :, :]
+        temp1_2 = TestPatch2[i * 100:(i + 1) * 100, :, :, :]
+        temp1_1 = temp1_1.cuda()
+        temp1_2 = temp1_2.cuda()
+        temp2 = cnn(temp1_1, temp1_2, temp1_1[:, :, patch_size // 2, patch_size // 2].unsqueeze(-1))[2]
+        temp3 = torch.max(temp2, 1)[1].squeeze()
+
+        pred_y[i * 100:(i + 1) * 100] = temp3.cpu()
+        del temp1_1, temp1_2, temp2, temp3
+
+    if (i + 1) * 100 < len(TestLabel):
+        temp1_1 = TestPatch1[(i + 1) * 100:len(TestLabel), :, :, :]
+        temp1_2 = TestPatch2[(i + 1) * 100:len(TestLabel), :, :, :]
+        temp1_1 = temp1_1.cuda()
+        temp1_2 = temp1_2.cuda()
+        temp2 = cnn(temp1_1, temp1_2, temp1_1[:, :, patch_size // 2, patch_size // 2].unsqueeze(-1))[2]
+        temp3 = torch.max(temp2, 1)[1].squeeze()
+        pred_y[(i + 1) * 100:len(TestLabel)] = temp3.cpu()
+        del temp1_1, temp1_2, temp2, temp3
+
+    pred_y = torch.from_numpy(pred_y).long()
+    last_y = pred_y
     """Balanced sampling"""
     unlabelled_train = {}
     sample_num_perclass = (num_labelled * 5)// Classes
     for cls in range(Classes):
-        indices = [j for j, x in enumerate(best_y.ravel().tolist()) if x == cls]
+        indices = [j for j, x in enumerate(last_y.ravel().tolist()) if x == cls]
         np.random.shuffle(indices)  # shuffle
         unlabelled_train[cls] = indices[:sample_num_perclass]
     unlabelled_train_fix_indices = []
