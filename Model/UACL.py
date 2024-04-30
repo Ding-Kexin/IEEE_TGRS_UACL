@@ -335,7 +335,13 @@ def train_network(train_loader, TestPatch1, TestPatch2, TestLabel, LR, EPOCH, l1
                       '| test accuracy: %.6f' % accuracy)
                 val_acc.append(accuracy.data.cpu().numpy())
                 # Save the parameters in network
-                torch.save(cnn.state_dict(), './log/UACL_baseline_pretrain_%d_%d.pkl' % ( num_train, order))
+                if accuracy > BestAcc:
+                    torch.save(cnn.state_dict(),
+                               './log/UACL_baseline_pretrain_%d_%d.pkl' % (
+                               num_train, order))
+                    BestAcc = accuracy
+                    best_y = pred_y
+
                 cnn.train()  # Open Batch Normalization and Dropout
     cnn.load_state_dict(torch.load(
         './log/UACL_baseline_pretrain_%d_%d.pkl' % (
