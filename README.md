@@ -32,7 +32,6 @@ If you find this paper useful, please cite:
   volume={},
   number={},
   pages={1-1},
-  keywords={Reliability;Laser radar;Training;Feature extraction;Task analysis;Synthetic aperture radar;Hyperspectral imaging;Semi-supervised classification;multimodal remote sensing (RS) data;hyperspectral images (HSIs);light detection and ranging (LiDAR) data;synthetic aperture radar (SAR);contrastive learning},
   doi={10.1109/TGRS.2024.3406690}}
 ```
 ****
