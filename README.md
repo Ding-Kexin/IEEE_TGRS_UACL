@@ -23,15 +23,15 @@ python Model/demo.py
 ****
 # Citation
 If you find this paper useful, please cite:
-``` 
+```
 @ARTICLE{10540387,
   author={Ding, Kexin and Lu, Ting and Li, Shutao},
   journal={IEEE Transactions on Geoscience and Remote Sensing}, 
-  title={Uncertainty-aware Contrastive Learning for Semi-supervised Classification of Multimodal Remote Sensing Images}, 
+  title={Uncertainty-Aware Contrastive Learning for Semi-Supervised Classification of Multimodal Remote Sensing Images}, 
   year={2024},
-  volume={},
+  volume={62},
   number={},
-  pages={1-1},
+  pages={1-13},
   doi={10.1109/TGRS.2024.3406690}}
 ```
 ****
