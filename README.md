@@ -24,15 +24,15 @@ python Model/demo.py
 # Citation
 If you find this paper useful, please cite:
 ```
-@ARTICLE{10659915,
-  author={Ding, Kexin and Lu, Ting and Fu, Wei and Fang, Leyuan},
-  journal={IEEE Transactions on Circuits and Systems for Video Technology}, 
-  title={Cross-Scene Hyperspectral Image Classification With Consistency-Aware Customized Learning}, 
+@ARTICLE{10540387,
+  author={Ding, Kexin and Lu, Ting and Li, Shutao},
+  journal={IEEE Transactions on Geoscience and Remote Sensing}, 
+  title={Uncertainty-Aware Contrastive Learning for Semi-Supervised Classification of Multimodal Remote Sensing Images}, 
   year={2024},
-  volume={},
+  volume={62},
   number={},
-  pages={1-1},
-  doi={10.1109/TCSVT.2024.3452135}}
+  pages={1-13},
+  doi={10.1109/TGRS.2024.3406690}}
 ```
 ****
 # Contact
