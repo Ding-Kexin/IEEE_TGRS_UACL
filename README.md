@@ -10,7 +10,7 @@ The repository contains the implementations for "**Uncertainty-Aware Contrastive
 ****
 # Train UACL
 ``` 
-python Model/demo_singleDA.py for single-modal cross-scene classification or Model/demo_multiDA.py for multi-modal cross-scene classification
+python Model/demo.py
 ``` 
 ****
 # Results
