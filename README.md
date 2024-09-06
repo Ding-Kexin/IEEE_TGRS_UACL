@@ -1,5 +1,5 @@
 # UACL
-The repository contains the implementations for "**Cross-Scene Hyperspectral Image Classification With Consistency-Aware Customized Learning**".You can find [the PDF of this paper](https://ieeexplore.ieee.org/document/10659915).
+The repository contains the implementations for "**Uncertainty-Aware Contrastive Learning for Semi-Supervised Classification of Multimodal Remote Sensing Images**".You can find [the PDF of this paper](https://ieeexplore.ieee.org/document/10540387).
 ![UACL](https://github.com/Ding-Kexin/UACL/blob/main/UACL_framework.jpg)
 ****
 # Datasets
